@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">atlas</string>
+    <string name="app_name">Cripto News</string>
     <string name="navigation_drawer_header_title">Cripto News</string>
     <string name="news_list_title">Latest news</string>
     <string name="news_details_title">Read article</string>
     <string name="desc_news_item_image">An image of the news item</string>
     <string name="news_detail_image_content_description">Image of news detail</string>
     <string name="logo_content_description">App logo of a bitcoin</string>
+    <string name="news_empty">No news at this time</string>
+    <string name="news_failed">An error occured retrieving the news</string>
+
 </resources>
