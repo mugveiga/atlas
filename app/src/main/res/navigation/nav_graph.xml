@@ -9,7 +9,6 @@
             android:name="com.example.atlas.NewsListFragment"
             android:label="@string/news_list_title"
             tools:layout="@layout/fragment_news_list">
-
         <action
                 android:id="@+id/action_news_list_fragment_to_news_detail_fragment"
                 app:destination="@id/news_detail_fragment"/>
@@ -18,11 +17,10 @@
     <fragment
             android:id="@+id/news_detail_fragment"
             android:name="com.example.atlas.NewsDetailFragment"
-            android:label="@string/news_details_title"
-            tools:layout="@layout/fragment_news_detail">
+            android:label="@string/news_details_title">
         <argument
-                android:name="newsId"
-                app:argType="string"/>
+                android:name="news"
+                app:argType="com.example.atlas.data.News"/>
     </fragment>
 
 </navigation>

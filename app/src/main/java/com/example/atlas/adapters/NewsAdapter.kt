@@ -23,7 +23,7 @@ class NewsAdapter : ListAdapter<News, NewsAdapter.ViewHolder>(NewsDiffCallback()
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val news = getItem(position)
         holder.apply {
-            bind(createOnClickListener(news.url), news)
+            bind(createOnClickListener(news), news)
             itemView.tag = news
         }
     }
@@ -36,9 +36,9 @@ class NewsAdapter : ListAdapter<News, NewsAdapter.ViewHolder>(NewsDiffCallback()
         )
     }
 
-    private fun createOnClickListener(newsUrl: String): View.OnClickListener {
+    private fun createOnClickListener(news: News): View.OnClickListener {
         return View.OnClickListener {
-            val direction = NewsListFragmentDirections.actionNewsListFragmentToNewsDetailFragment(newsUrl)
+            val direction = NewsListFragmentDirections.actionNewsListFragmentToNewsDetailFragment(news)
             it.findNavController().navigate(direction)
         }
     }

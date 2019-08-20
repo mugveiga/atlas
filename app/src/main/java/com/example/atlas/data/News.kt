@@ -1,5 +1,6 @@
 package com.example.atlas.data
 
+import java.io.Serializable
 import java.time.Instant
 
 data class News(
@@ -11,4 +12,4 @@ data class News(
     val publishedAt: Instant,
     val content: String
 
-)
+) : Serializable
