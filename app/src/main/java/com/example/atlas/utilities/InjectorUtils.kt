@@ -14,7 +14,7 @@ object InjectorUtils {
 
     private fun getNewsRepository(): NewsRepository {
         val retrofit = Retrofit.Builder().baseUrl("https://newsapi.org/v2/")
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(GsonParser.getGson()))
             .build()
         val newsDataSource = NewsDataSource(retrofit.create(NewsApi::class.java))
         return NewsRepository.getInstance(newsDataSource)

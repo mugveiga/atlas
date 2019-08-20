@@ -15,37 +15,55 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"
             android:layout_height="wrap_content">
 
         <ImageView
                 android:id="@+id/news_item_image"
-                android:layout_width="0dp"
                 android:layout_height="@dimen/news_item_image_height"
-                android:layout_marginTop="@dimen/margin_normal"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:layout_marginEnd="@dimen/margin_small"
-                android:layout_marginStart="@dimen/margin_small"
+                android:layout_width="@dimen/news_item_image_height"
                 android:contentDescription="@string/desc_news_item_image"
                 android:scaleType="centerCrop"
                 app:imageFromUrl="@{news.urlToImage}"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
                 android:id="@+id/news_item_title"
                 android:layout_width="0dp"
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_normal"
-                android:layout_marginEnd="@dimen/margin_small"
                 android:layout_marginStart="@dimen/margin_small"
-                android:layout_marginTop="@dimen/margin_small"
-                android:textAppearance="?attr/textAppearanceListItem"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:text="@{news.title}"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/news_item_image"
-                tools:text="News title"/>
+                tools:text="News title"
+                app:layout_constraintStart_toEndOf="@+id/news_item_image"
+                app:layout_constraintTop_toTopOf="@+id/news_item_image"/>
+
+        <TextView
+                tools:text="News description"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/news_item_description"
+                android:maxLines="3"
+                android:ellipsize="end"
+                app:layout_constraintStart_toEndOf="@+id/news_item_image"
+                android:layout_marginStart="@dimen/margin_small"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{news.description}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/news_item_image"
+                app:layout_constraintTop_toBottomOf="@+id/news_item_title"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bgDivisor"
+                app:layout_constraintTop_toBottomOf="@+id/news_item_image"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

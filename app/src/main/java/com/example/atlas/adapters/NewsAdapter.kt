@@ -43,16 +43,6 @@ class NewsAdapter : ListAdapter<News, NewsAdapter.ViewHolder>(NewsDiffCallback()
         }
     }
 
-    @BindingAdapter("imageFromUrl")
-    fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
-        if (!imageUrl.isNullOrEmpty()) {
-            Glide.with(view.context)
-                .load(imageUrl)
-                .transition(DrawableTransitionOptions.withCrossFade())
-                .into(view)
-        }
-    }
-
     class ViewHolder(
         private val binding: ListItemNewsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
