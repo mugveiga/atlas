@@ -16,6 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:padding="@dimen/margin_small"
+            android:onClick="@{clickListener}"
             android:layout_height="wrap_content">
 
         <ImageView

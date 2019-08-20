@@ -8,4 +8,5 @@
     <dimen name="margin_small">8dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="fab_bottom_padding">72dp</dimen>
+    <dimen name="image_detail_height">500dp</dimen>
 </resources>

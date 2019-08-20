@@ -1,6 +1,7 @@
 package com.example.atlas.data
 
 import java.io.Serializable
+import java.text.SimpleDateFormat
 import java.util.*
 
 data class News(
@@ -12,4 +13,13 @@ data class News(
     val publishedAt: Date,
     val content: String
 
-) : Serializable
+) : Serializable {
+
+    fun publishedAtPretty(): String {
+        return SimpleDateFormat.getDateInstance().format(publishedAt)
+    }
+
+}
+
+
+
